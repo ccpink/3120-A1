@@ -24,7 +24,7 @@ int main(void) {
     //Tokenize the string
     tokens = strtok(input, delimiter);
     //Open File
-    fp = fopen("output.txt", "w");
+    fp = fopen("Output.txt", "w");
     //print out each word
     while (tokens != NULL) {
         //print word in console
