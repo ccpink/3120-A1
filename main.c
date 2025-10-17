@@ -10,19 +10,25 @@ int main(void) {
     size_t len;
     const char *delimiter= " ";
     char *tokens;
+
     //Scan User" Input
     printf("Please Enter Your Sentence: ");
     fgets(buffer, sizeof(buffer), stdin);
+
     //remove the \n added by fgets
     buffer[strcspn(buffer, "\n\r")] = 0;
+
     //Allocated string into a string.
     len = strlen(buffer);
     input = (char *)malloc((len + 1) * sizeof(char));
     strcpy(input, buffer);
+
     //Tokenize the string
     tokens = strtok(input, delimiter);
+
     //Open File
     fp = fopen("Output.txt", "w");
+
     //print out each word
     while (tokens != NULL) {
         //print word in console
@@ -32,6 +38,7 @@ int main(void) {
         //next token
         tokens = strtok(NULL, delimiter);
     }
+
     //Close File
     fclose(fp);
     //free values
